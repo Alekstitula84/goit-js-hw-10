@@ -1,6 +1,6 @@
 import './css/styles.css'
 import debounce from 'lodash.debounce'
-import Notiflix from 'notiflix'
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchCountries } from './fetchCountries'
 
 const DEBOUNCE_DELAY = 300
@@ -63,9 +63,9 @@ function renderCountryInfo(countries) {
 }
 
 function alertWrongName() {
-    Notiflix.Notify.failure('Oops, there is no country with that name')
+    Notify.failure('Oops, there is no country with that name')
 }
 
 function alertTooManyMatches() {
-    Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
+    Notify.info('Too many matches found. Please enter a more specific name.')
 }
